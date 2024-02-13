@@ -627,7 +627,7 @@ int rtw89_cam_fill_bssid_cam_info(struct rtw89_dev *rtwdev,
 #endif
 	struct rtw89_bssid_cam_entry *bssid_cam = rtw89_get_bssid_cam_of(rtwvif, rtwsta);
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 7, 0)
-	u8 bss_color = vif->bss_conf.he_bss_color.color;
+	// u8 bss_color = vif->bss_conf.he_bss_color.color;
 #else
 	u8 bss_color = 0;
 #endif
@@ -648,7 +648,7 @@ int rtw89_cam_fill_bssid_cam_info(struct rtw89_dev *rtwdev,
 	FWCMD_SET_ADDR_BSSID_MASK(cmd, bss_mask);
 #endif
 	FWCMD_SET_ADDR_BSSID_BB_SEL(cmd, bssid_cam->phy_idx);
-	FWCMD_SET_ADDR_BSSID_BSS_COLOR(cmd, bss_color);
+	// FWCMD_SET_ADDR_BSSID_BSS_COLOR(cmd, bss_color);
 
 	FWCMD_SET_ADDR_BSSID_BSSID0(cmd, bssid_cam->bssid[0]);
 	FWCMD_SET_ADDR_BSSID_BSSID1(cmd, bssid_cam->bssid[1]);
